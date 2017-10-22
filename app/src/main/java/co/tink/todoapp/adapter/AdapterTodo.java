@@ -115,10 +115,7 @@ public class AdapterTodo extends RecyclerSwipeAdapter<AdapterTodo.ViewHolder> {
       @Override
       public void onClick(View view) {
         mItemManger.removeShownLayouts(holder.swipeLayout);
-//        list.remove(holder.getAdapterPosition());
         ((MainActivity) context).removeItem(holder.getAdapterPosition());
-//        notifyItemRemoved(holder.getAdapterPosition());
-//        notifyItemRangeChanged(holder.getAdapterPosition(), list.size());
         notifyDataSetChanged();
         mItemManger.closeAllItems();
       }
