@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
   private RecyclerView recycler;
   private LinearLayout inputs;
   private EditText editText;
+  private Toolbar toolbar;
 
   private AdapterTodo adapter;
   private DB snappydb;
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     initViews();
+    setSupportActionBar(toolbar);
+    toolbar.setTitle(getResources().getString(R.string.app_name));
     fab();
     recycler();
 
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     recycler = (RecyclerView) findViewById(R.id.recycler);
     inputs = (LinearLayout) findViewById(R.id.inputs);
     editText = (EditText) findViewById(R.id.edit_text);
+    toolbar = (Toolbar) findViewById(R.id.toolbar);
   }
 
   private void fab() {
